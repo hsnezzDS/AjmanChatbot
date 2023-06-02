@@ -1,6 +1,12 @@
 import openai
 import streamlit as st
 from streamlit_chat import message
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+import openai
+
 
 # Setting page title and header
 st.set_page_config(page_title="AJMAN", page_icon=":robot_face:")
@@ -10,8 +16,10 @@ st.markdown(
 )
 
 # Set org ID and API key
-openai.organization = "org-2027kdwbAfmUMC6C2xo5T58g"
-openai.api_key = "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"
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.organization = os.getenv("ORGANIZATION")
+
 
 # Initialise session state variables
 if "generated" not in st.session_state:
