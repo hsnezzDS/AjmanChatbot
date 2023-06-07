@@ -50,7 +50,8 @@ with col2:  # To display brand logo
 # Set org ID and API key
 
 # openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.organization = os.getenv("ORGANIZATION")
+# openai.organization = os.getenv("ORGANIZATION")
+openai.organization = st.sidebar.text_input("Org ID:")
 openai.api_key = st.sidebar.text_input("API Key:")
 
 
