@@ -84,7 +84,7 @@ Once I have your answers, I can proceed with generating a personalized itinerary
             "content": "Certainly! Let's start with the first question:1.  How many days will you be spending in Ajman?",
         },
         {
-            "role": "user",
+            "role": "user", 
             "content": "5",
         },
         {
@@ -764,7 +764,7 @@ def generate_response(prompt):
     st.session_state["messages"].append({"role": "user", "content": prompt})
 
     completion = openai.ChatCompletion.create(
-        model=model, messages=st.session_state["messages"], max_tokens=100
+        model=model, messages=st.session_state["messages"], max_tokens=1000
     )
     response = completion.choices[0].message.content
     st.session_state["messages"].append({"role": "assistant", "content": response})
